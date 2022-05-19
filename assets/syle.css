@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+main {
+    height: 300px;
+    width: 50%;
+    background-color: #edbcbc;
+    border: 1px solid red;
+    border-radius: 5%;
+    margin: 15% 25%
+}
+
+main h1 {
+    text-align: center;
+    margin-bottom: 10%;
+    margin-top: 5%;
+    position: relative;
+}
+
+main p {
+    text-align: center;
+    position: relative;
+    margin: 5% 25%
+}
+
+#submitbutton {
+    text-align: center;
+    position: relative;
+    margin: 5% 45%
+}
