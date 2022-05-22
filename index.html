@@ -5,17 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Javascript Quiz</title>
     <link rel="stylesheet" href="./assets/syle.css" />
-    <script src="./assets/script.js"></script>
   </head>
+  <header>
+    <div id="timer">
+      <h1>Time Remaining</h1>
+      <h2 id="time-remaining"></h2>
+    </div>
+  </header>
   <body>
     <main id="quizbox">
       <h1>Welcome to Quiztime!</h1>
+      <div id="choices"></div>
       <p>
-        You have one minute to complete 5 questions. Click submit to get started
+        You have thirty seconds to complete 5 questions. Click the button to get
+        started!
       </p>
-      <button id="submitbutton">Submit</button>
+      <button id="go" class="btn">Lets Get Started!</button>
     </main>
 
     <div id="solutions"></div>
+    <script src="./assets/script.js"></script>
   </body>
 </html>

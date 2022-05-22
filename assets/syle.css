@@ -6,18 +6,18 @@
 }
 
 main {
-    height: 300px;
+    height: 400px;
     width: 50%;
     background-color: #edbcbc;
     border: 1px solid red;
     border-radius: 5%;
-    margin: 15% 25%
+    margin: 5% 25%
 }
 
 main h1 {
     text-align: center;
-    margin-bottom: 10%;
-    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-top: 10%;
     position: relative;
 }
 
@@ -27,8 +27,15 @@ main p {
     margin: 5% 25%
 }
 
-#submitbutton {
+#go {
     text-align: center;
     position: relative;
-    margin: 5% 45%
+    margin: 0% 45%;
+    width:fit-content;
+    border: 1px solid red;
+}
+
+header {
+    text-align: center;
+    visibility: hidden;
 }
