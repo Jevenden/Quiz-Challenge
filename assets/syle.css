@@ -39,3 +39,10 @@ header {
     text-align: center;
     visibility: hidden;
 }
+
+#results {
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-large;
+    margin-top: 5%;
+}

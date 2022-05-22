@@ -4,16 +4,25 @@ const solutions = document.getElementById('solutions');
 const timerEL = document.getElementById('time-remaining');
 document.getElementById("go").addEventListener("click", startTimer);
 
-
 function startQuiz() {
     document.querySelector("main").innerHTML = `<h1>Question: "question one"</h1>`;
     document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="c1"> <input type="radio" name="group1"> blah blah blah blah bllah blah</label>`+ `<br></br>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="w1"> <input type="radio" name="group1"> blah blah blah blah bllah blah</label>`+ `<br></br>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="w1"> <input type="radio" name="group1"> blah blah blah blah bllah blah</label>`+ `<br></br>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="w1"> <input type="radio" name="group1"> blah blah blah blah bllah blah</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> blah blah blah blah bllah blah</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> blah blah blah blah bllah blah</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> blah blah blah blah bllah blah</label>`+ `<br></br>`;
+
     const firstAnswer = document.querySelectorAll('[name="group1"]');
     for (let i = 0; i < firstAnswer.length; i++) {
-        firstAnswer[i].addEventListener("click", secondQ);
+        firstAnswer[i].addEventListener("click", () => {    
+            wrong1();
+            secondQ();
+            timerLoss()
+       });
+    function wrong1 () {
+        document.getElementById("results").innerHTML = `<p>Wrong!</p>`;}
+    
+    document.getElementById('c1').onclick = function() {
+        document.getElementById("results").innerHTML = `<p>Correct!</p>`;}
 }}
 
 function secondQ() {
@@ -144,13 +153,15 @@ function fifthQ() {
 function showAnswers(){}
 
 
-
+function timerLoss() {
+    sec = sec -10;
+}
+let sec = 60
 
 // Starts and declinates the timer
 function startTimer() {
     document.getElementById("timer").style.visibility = "visible";
     document.getElementById("time-remaining").innerHTML = `60`;
-    let sec = 60;
     let timer = setInterval(function(){
         document.getElementById("time-remaining").innerHTML=`<h2></h2>`+sec;
         sec--;
