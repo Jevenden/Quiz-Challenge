@@ -3,10 +3,11 @@ const quizBox = document.getElementById('quizbox');
 const solutions = document.getElementById('solutions');
 const timerEL = document.getElementById('time-remaining');
 document.getElementById("go").addEventListener("click", startTimer);
+let score = 0;
 
 function startQuiz() {
     document.querySelector("main").innerHTML = `<h1>Question: "question one"</h1>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="c1"> <input type="radio" name="group1"> blah blah blah blah bllah blah</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="c1"> <input type="radio"> blah blah blah blah bllah blah</label>`+ `<br></br>`;
     document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> blah blah blah blah bllah blah</label>`+ `<br></br>`;
     document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> blah blah blah blah bllah blah</label>`+ `<br></br>`;
     document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> blah blah blah blah bllah blah</label>`+ `<br></br>`;
@@ -18,44 +19,68 @@ function startQuiz() {
             secondQ();
             timerLoss()
        });
+
     function wrong1 () {
         document.getElementById("results").innerHTML = `<p>Wrong!</p>`;}
-    
-    document.getElementById('c1').onclick = function() {
-        document.getElementById("results").innerHTML = `<p>Correct!</p>`;}
+        
+        document.getElementById('c1').onclick = function() {
+        document.getElementById("results").innerHTML = `<p>Correct!</p>`;
+        score += 1;
+        console.log(score);
+        secondQ()
+    }
 }}
 
 function secondQ() {
     document.querySelector("main").innerHTML = `<h1>Question: "question two"</h1>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="c2"> <input type="radio" name="group2"> bloop bloop bloop bloop</label>`+ `<br></br>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="w1"> <input type="radio" name="group2"> bloop bloop bloop bloop</label>`+ `<br></br>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="w1"> <input type="radio" name="group2"> bloop bloop bloop bloop</label>`+ `<br></br>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="w1"> <input type="radio" name="group2"> bloop bloop bloop bloop</label>`+ `<br></br>`;
-    const secondAnswer = document.querySelectorAll('[name="group2"]');
-    for (let i = 0; i < secondAnswer.length; i++) {
-        secondAnswer[i].addEventListener("click", thirdQ);
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> bloop bloop bloop bloop</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> bloop bloop bloop bloop</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="c1"> <input type="radio"> bloop bloop bloop bloop</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> bloop bloop bloop bloop</label>`+ `<br></br>`;
+
+    const firstAnswer = document.querySelectorAll('[name="group1"]');
+    for (let i = 0; i < firstAnswer.length; i++) {
+        firstAnswer[i].addEventListener("click", () => {    
+            wrong1();
+            thirdQ();
+            timerLoss()
+       });
+
+    function wrong1 () {
+        document.getElementById("results").innerHTML = `<p>Wrong!</p>`;}
+        
+        document.getElementById('c1').onclick = function() {
+        document.getElementById("results").innerHTML = `<p>Correct!</p>`;
+        score += 1;
+        console.log(score);
+        thirdQ()
+    }
 }}
 
 function thirdQ() {
     document.querySelector("main").innerHTML = `<h1>Question: "question three"</h1>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="c3"> <input type="radio" name="group3"> bloop bloop bloop bloop</label>`+ `<br></br>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="w1"> <input type="radio" name="group3"> bloop bloop bloop bloop</label>`+ `<br></br>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="w1"> <input type="radio" name="group3"> bloop bloop bloop bloop</label>`+ `<br></br>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="w1"> <input type="radio" name="group3"> bloop bloop bloop bloop</label>`+ `<br></br>`;
-    const thirdAnswer = document.querySelectorAll('[name="group3"]');
-    for (let i = 0; i < thirdAnswer.length; i++) {
-        thirdAnswer[i].addEventListener("click", fourthQ);
-}}
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> bloop bloop bloop bloop</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="c1"> <input type="radio" name="group1"> bloop bloop bloop bloop</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio"> bloop bloop bloop bloop</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> bloop bloop bloop bloop</label>`+ `<br></br>`;
 
-function fourthQ() {
-    document.querySelector("main").innerHTML = `<h1>Question: "question four"</h1>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="c4"> <input type="radio" name="group4"> bloop bloop bloop bloop</label>`+ `<br></br>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="w1"> <input type="radio" name="group4"> bloop bloop bloop bloop</label>`+ `<br></br>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="w1"> <input type="radio" name="group4"> bloop bloop bloop bloop</label>`+ `<br></br>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="w1"> <input type="radio" name="group4"> bloop bloop bloop bloop</label>`+ `<br></br>`;
-    const fourthAnswer = document.querySelectorAll('[name="group4"]');
-    for (let i = 0; i < fourthAnswer.length; i++) {
-        fourthAnswer[i].addEventListener("click", fifthQ);
+    const firstAnswer = document.querySelectorAll('[name="group1"]');
+    for (let i = 0; i < firstAnswer.length; i++) {
+        firstAnswer[i].addEventListener("click", () => {    
+            wrong1();
+            thirdQ();
+            timerLoss()
+       });
+
+    function wrong1 () {
+        document.getElementById("results").innerHTML = `<p>Wrong!</p>`;}
+        
+        document.getElementById('c1').onclick = function() {
+        document.getElementById("results").innerHTML = `<p>Correct!</p>`;
+        score += 1;
+        console.log(score);
+        fourthQ()
+    }
 }}
 
 function fifthQ() {
@@ -66,7 +91,9 @@ function fifthQ() {
     document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="w1"> <input type="radio" name="group5"> bloop bloop bloop bloop</label>`+ `<br></br>`;
     const fifthAnswer = document.querySelectorAll('[name="group5"]');
     for (let i = 0; i < fifthAnswer.length; i++) {
-        fifththAnswer[i].addEventListener("click", fifthQ);
+        fifthAnswer[i].addEventListener("click", () => {
+            scoreboard()
+        });
 }}
 
 // function startQuiz(){
@@ -167,7 +194,41 @@ function startTimer() {
         sec--;
         if (sec < 0) {
             clearInterval(timer);
+            scoreboard()
         }
     }, 1000);
 startQuiz()
+}
+
+let endpage = document.getElementById("endpage");
+endpage.style.display= "none";
+
+let mainContainer = document.getElementById("quizbox");
+
+let timer = document.getElementById("timer");
+let results = document.getElementById("results");
+
+let scores = document.getElementById("scores");
+
+function scoreboard() {
+    endpage.style.display = "block"
+    mainContainer.style.display = "none";
+    timer.style.display = "none";
+    results.style.display = "none";
+    let initial = document.getElementById("initial");
+    let submitButton = document.getElementById("submit-button");
+    submitButton.addEventListener("click", (event) => {
+        event.preventDefault()
+        console.log(initial.value)
+        localStorage.setItem("score", initial.value)
+        getItems()
+    })
+}
+
+function getItems() {
+    for (i=0; i<localStorage.length; i++) {
+        let listItem = document.createElement("li")
+        listItem.textContent = localStorage.getItem("score")
+        scores.appendChild(listItem)
+    }
 }
