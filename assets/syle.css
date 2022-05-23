@@ -10,7 +10,7 @@ main {
     width: 50%;
     background-color: #edbcbc;
     border: 1px solid red;
-    border-radius: 5%;
+    border-radius: 25px;
     margin: 5% 25%
 }
 
@@ -45,4 +45,5 @@ header {
     font-weight: bold;
     font-size: xx-large;
     margin-top: 5%;
+    font-style: italic;
 }

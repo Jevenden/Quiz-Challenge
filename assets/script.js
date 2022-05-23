@@ -1,43 +1,66 @@
+// To-Do
+// -Get scores to show up
+// -Add CSS for prettiness
+// -Add a clear high scores button
+// -Write real questions/answers
+
 // Variables used to target elements in HTML
 const quizBox = document.getElementById('quizbox');
 const solutions = document.getElementById('solutions');
 const timerEL = document.getElementById('time-remaining');
+let mainContainer = document.getElementById("quizbox");
+let timer = document.getElementById("timer");
+let results = document.getElementById("results");
+let scores = document.getElementById("scores");
+
+// Button to start the timer
 document.getElementById("go").addEventListener("click", startTimer);
+
+// Starting Score
 let score = 0;
 
+// Creates the first question, with 4 possible answers
 function startQuiz() {
     document.querySelector("main").innerHTML = `<h1>Question: "question one"</h1>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="c1"> <input type="radio"> blah blah blah blah bllah blah</label>`+ `<br></br>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> blah blah blah blah bllah blah</label>`+ `<br></br>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> blah blah blah blah bllah blah</label>`+ `<br></br>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> blah blah blah blah bllah blah</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="c1"> <input type="radio"> correct</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> wrong</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> wrong</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> wrong</label>`+ `<br></br>`;
 
+//Adds responsiveness to the potential choices
     const firstAnswer = document.querySelectorAll('[name="group1"]');
     for (let i = 0; i < firstAnswer.length; i++) {
         firstAnswer[i].addEventListener("click", () => {    
             wrong1();
             secondQ();
-            timerLoss()
+            timerLoss();
        });
 
+// Responds to the user's input
     function wrong1 () {
         document.getElementById("results").innerHTML = `<p>Wrong!</p>`;}
-        
         document.getElementById('c1').onclick = function() {
         document.getElementById("results").innerHTML = `<p>Correct!</p>`;
         score += 1;
         console.log(score);
         secondQ()
     }
+    setTimeout(() => {
+        document.getElementById("results").innerHTML=``;
+      }, 2000)
 }}
 
+
+
+// Creates the second question, with 4 possible answers
 function secondQ() {
     document.querySelector("main").innerHTML = `<h1>Question: "question two"</h1>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> bloop bloop bloop bloop</label>`+ `<br></br>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> bloop bloop bloop bloop</label>`+ `<br></br>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="c1"> <input type="radio"> bloop bloop bloop bloop</label>`+ `<br></br>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> bloop bloop bloop bloop</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> wrong</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> wrong</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="c1"> <input type="radio"> correct</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> wrong</label>`+ `<br></br>`;
 
+//Adds responsiveness to the choices
     const firstAnswer = document.querySelectorAll('[name="group1"]');
     for (let i = 0; i < firstAnswer.length; i++) {
         firstAnswer[i].addEventListener("click", () => {    
@@ -46,24 +69,29 @@ function secondQ() {
             timerLoss()
        });
 
+// Responds to the user's input
     function wrong1 () {
         document.getElementById("results").innerHTML = `<p>Wrong!</p>`;}
-        
         document.getElementById('c1').onclick = function() {
         document.getElementById("results").innerHTML = `<p>Correct!</p>`;
         score += 1;
         console.log(score);
         thirdQ()
     }
+    setTimeout(() => {
+        document.getElementById("results").innerHTML=``;
+      }, 2000)
 }}
 
+// Creates the third question, with 4 possible answers
 function thirdQ() {
     document.querySelector("main").innerHTML = `<h1>Question: "question three"</h1>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> bloop bloop bloop bloop</label>`+ `<br></br>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="c1"> <input type="radio"> bloop bloop bloop bloop</label>`+ `<br></br>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> bloop bloop bloop bloop</label>`+ `<br></br>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> bloop bloop bloop bloop</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> wrong</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="c1"> <input type="radio"> correct</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> wrong</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> wrong</label>`+ `<br></br>`;
 
+//Adds responsiveness to the potential choices
     const firstAnswer = document.querySelectorAll('[name="group1"]');
     for (let i = 0; i < firstAnswer.length; i++) {
         firstAnswer[i].addEventListener("click", () => {    
@@ -72,24 +100,29 @@ function thirdQ() {
             timerLoss()
        });
 
+// Responds to the user's input
     function wrong1 () {
         document.getElementById("results").innerHTML = `<p>Wrong!</p>`;}
-
         document.getElementById('c1').onclick = function() {
         document.getElementById("results").innerHTML = `<p>Correct!</p>`;
         score += 1;
         console.log(score);
         fourthQ()
     }
+    setTimeout(() => {
+        document.getElementById("results").innerHTML=``;
+      }, 2000)
 }}
 
+// Creates the fourth question, with 4 possible answers
 function fourthQ() {
     document.querySelector("main").innerHTML = `<h1>Question: "question four"</h1>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> bloop bloop bloop bloop</label>`+ `<br></br>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> bloop bloop bloop bloop</label>`+ `<br></br>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> bloop bloop bloop bloop</label>`+ `<br></br>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="c1"> <input type="radio"> bloop bloop bloop bloop</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> wrong</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> wrong</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> wrong</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="c1"> <input type="radio"> correct</label>`+ `<br></br>`;
 
+//Adds responsiveness to the potential choices
     const firstAnswer = document.querySelectorAll('[name="group1"]');
     for (let i = 0; i < firstAnswer.length; i++) {
         firstAnswer[i].addEventListener("click", () => {    
@@ -98,24 +131,29 @@ function fourthQ() {
             timerLoss()
        });
 
+// Responds to the user's input
     function wrong1 () {
         document.getElementById("results").innerHTML = `<p>Wrong!</p>`;}
-        
         document.getElementById('c1').onclick = function() {
         document.getElementById("results").innerHTML = `<p>Correct!</p>`;
         score += 1;
         console.log(score);
         fifthQ()
     }
+    setTimeout(() => {
+        document.getElementById("results").innerHTML=``;
+      }, 2000)
 }}
 
+// Creates the final, fifth question, with 4 possible answers
 function fifthQ() {
-    document.querySelector("main").innerHTML = `<h1>Question: "question four"</h1>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> bloop bloop bloop bloop</label>`+ `<br></br>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="c1"> <input type="radio"> bloop bloop bloop bloop</label>`+ `<br></br>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> bloop bloop bloop bloop</label>`+ `<br></br>`;
-    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> bloop bloop bloop bloop</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML = `<h1>Question: "question five"</h1>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> wrong</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" id="c1"> <input type="radio"> correct</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> wrong</label>`+ `<br></br>`;
+    document.querySelector("main").innerHTML += `<label style="margin-left:30%" class="w1"> <input type="radio" name="group1"> wrong</label>`+ `<br></br>`;
 
+//Adds responsiveness to the potential choices
     const firstAnswer = document.querySelectorAll('[name="group1"]');
     for (let i = 0; i < firstAnswer.length; i++) {
         firstAnswer[i].addEventListener("click", () => {    
@@ -124,107 +162,27 @@ function fifthQ() {
             timerLoss()
        });
 
+// Responds to the user's input and keeps score
     function wrong1 () {
         document.getElementById("results").innerHTML = `<p>Wrong!</p>`;}
-        
         document.getElementById('c1').onclick = function() {
         document.getElementById("results").innerHTML = `<p>Correct!</p>`;
         score += 1;
         console.log(score);
         scoreboard()
     }
+    setTimeout(() => {
+        document.getElementById("results").innerHTML=``;
+      }, 2000)
 }}
 
-// function startQuiz(){
-//     let catcher = [];
-//     quizQuestions.forEach(
-//         function (currentQuestion, questionNumber) {
-//             const answers = [];
-//             for(letter in currentQuestion.answers){
-//                 answers.push(
-//                     `<label>
-//                         <input type="radio" name="question${questionNumber}" value="${letter}">
-//                         ${letter} :
-//                         ${currentQuestion.answers[letter]}
-//                     </label>`
-//                 );
-//             }
-//             catcher.push(
-//                 `<div class="question"> ${currentQuestion.question} </div>
-//                 <div class="answers"> ${answers.join('')} </div>`
-//             );
-//         }
-//     );
-//     quizBox.innerHTML = catcher.join('');
-// };
-
-
-// Quiz questions stored in an object
-// const quizQuestions = [
-//     {
-//         Question: "Blah blah question one",
-//         Answers: {
-//             A: "blah blah",
-//             B: "blah blah",
-//             C: "blah blah",
-//             D: "blah blah",
-//         },
-//         correctAnswer: "B"
-//     },
-//     {
-//         Question: "Blah blah question two",
-//         Answers: {
-//             A: "blah blah",
-//             B: "blah blah",
-//             C: "blah blah",
-//             D: "blah blah",
-//         },
-//         correctAnswer: "B"
-//     },
-//     {
-//         Question: "Blah blah question three",
-//         Answers: {
-//             A: "blah blah",
-//             B: "blah blah",
-//             C: "blah blah",
-//             D: "blah blah",
-//         },
-//         correctAnswer: "B"
-//     },
-//     {
-//         Question: "Blah blah question four",
-//         Answers: {
-//             A: "blah blah",
-//             B: "blah blah",
-//             C: "blah blah",
-//             D: "blah blah",
-//         },
-//         correctAnswer: "B"
-//     },
-//     {
-//         Question: "Blah blah question five",
-//         Answers: {
-//             A: "blah blah",
-//             B: "blah blah",
-//             C: "blah blah",
-//             D: "blah blah",
-//         },
-//         correctAnswer: "B"
-//     }
-// ];
-
-
-
-
-function showAnswers(){}
-
-
+// Subtracts time from the timer for an incorrect answer
 function timerLoss() {
-    sec = sec -10;
+    sec = sec -15;
 }
 let sec = 60
 
-// Starts and declinates the timer
+// Starts and declinates the timer, then starts the quiz
 function startTimer() {
     document.getElementById("timer").style.visibility = "visible";
     document.getElementById("time-remaining").innerHTML = `60`;
@@ -239,16 +197,11 @@ function startTimer() {
 startQuiz()
 }
 
+// Hides the endpage at page open
 let endpage = document.getElementById("endpage");
 endpage.style.display= "none";
 
-let mainContainer = document.getElementById("quizbox");
-
-let timer = document.getElementById("timer");
-let results = document.getElementById("results");
-
-let scores = document.getElementById("scores");
-
+// Reveals the endpage, hides the rest of the page, and creates the submit button
 function scoreboard() {
     endpage.style.display = "block"
     mainContainer.style.display = "none";
@@ -264,10 +217,11 @@ function scoreboard() {
     })
 }
 
+// Creates and populates the scoreboard
 function getItems() {
     for (i=0; i<localStorage.length; i++) {
-        let listItem = document.createElement("li")
-        listItem.textContent = localStorage.getItem("score")
-        scores.appendChild(listItem)
+        let listItem = document.createElement("li");
+        listItem.textContent = localStorage.getItem("score");
+        scores.appendChild(listItem);
     }
 }
