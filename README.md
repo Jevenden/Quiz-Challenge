@@ -4,4 +4,4 @@ I then added my initial buttons to start the quiz and show the high scores, resp
 
 I then repeated the above four more times for the remaining questions, with the final question calling the scoreboard, similarly to the "show high scores" button. I then programmed a submit button that called the user's score from local memory and concatenated it with the submitted name. Finally, I created a "reset quiz" button that resored the quiz to the its default state at page load, which I had to do by dynamically recreating the HTML that I had previously overwritten.
 
-![ScreenShot](screenshot.jpg)
+![screenshot](https://user-images.githubusercontent.com/102879070/169963346-793f27f1-7a5b-44a6-9e6b-515d448e3e8c.jpg)
