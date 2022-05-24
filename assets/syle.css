@@ -6,7 +6,7 @@
 }
 
 main {
-    height: 400px;
+    height: 450px;
     width: 50%;
     background-color: #edbcbc;
     border: 1px solid red;
@@ -32,12 +32,14 @@ main p {
     position: relative;
     margin: 0% 45%;
     width:fit-content;
-    border: 1px solid red;
 }
 
 header {
     text-align: center;
-    visibility: hidden;
+}
+
+#timer {
+    display: none;
 }
 
 #results {
@@ -46,4 +48,29 @@ header {
     font-size: xx-large;
     margin-top: 5%;
     font-style: italic;
+}
+
+#view-scores {
+    text-align: center;
+    position: relative;
+    margin-top: 5%;
+}
+
+#endpage {
+    height: 400px;
+    width: 50%;
+    background-color: #cbbced;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 25px;
+    margin: 5% 25%;
+    text-align: center;
+}
+
+#scores {
+    list-style: none;
+}
+
+#submit-button {
+    margin-top: 2%;
+    margin-bottom: 5%;
 }

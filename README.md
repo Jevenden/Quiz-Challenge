@@ -1,41 +1,7 @@
-# Quiz-Challenge
+For this challenge, first I built my HTML, with all the necessary symantic elements, and tried to keep it as minimal as possible so I could practice more with DOM manipulation. I then applied minimal CSS to the HTML elements to style the page. In script.js I started by creating all the variables I would need, then, just for practice, I created the startup page using dynamic HTML rewriting, and hid the scoreboard page for later use.
 
-# 04 Web APIs: Code Quiz
+I then added my initial buttons to start the quiz and show the high scores, respectively, as well as buttons to clear the high scores and restart the quiz, both on the hidden scoreboard. I then programmed the timer and set it to begin when the start quiz button was pressed, which would, in turn, start the quiz. I then used a separate function for each quiz, again primarily for practice, and rewrote my HTML dynamically using javascript, creating the questions and answer buttons as needed, as well as programming the results of the user's choices; both of which would call the next function and display a timed message, below, concerning the accuracy of their answer, but only the correct answer would add to their score, while only the incorrect answer would remove 15s from the timer. The incorrect answers were identified in a group using their name, while the correct answer was defined using an id.
 
-## Your Task
+I then repeated the above four more times for the remaining questions, with the final question calling the scoreboard, similarly to the "show high scores" button. I then programmed a submit button that called the user's score from local memory and concatenated it with the submitted name. Finally, I created a "reset quiz" button that resored the quiz to the its default state at page load, which I had to do by dynamically recreating the HTML that I had previously overwritten.
 
-At some point in your journey to become a full-stack web developer, you’ll likely be asked to complete a coding assessment&mdash;perhaps as part of an interview process. A typical coding assessment includes both multiple-choice questions and interactive coding challenges.
-
-To help familiarize you with these tests and allow you to use the skills covered in this module, this Challenge invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface.
-
-This week’s coursework will equip you with all the skills you need to succeed in this assignment.
-
-## User Story
-
-```
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-```
-
-## Acceptance Criteria
-
-```
-GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and my score
-```
-
-## Mock-Up
-
-The following animation demonstrates the application functionality:
-
-![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./Assets/04-web-apis-homework-demo.gif)
+![ScreenShot](screenshot.jpg)

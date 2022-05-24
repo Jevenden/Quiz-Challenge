@@ -14,20 +14,19 @@
   </header>
   <body>
     <main id="quizbox">
-      <h1>Welcome to Quiztime!</h1>
+      <h1 id="title"></h1>
       <div id="choices"></div>
-      <p>
-        You have one minute to complete a set of five questions. For every wrong
-        answer, fifteen seconds will be deducted from your time remaining. Click
-        the button to get started!
-      </p>
-      <button id="go" class="btn">Lets Get Started!</button>
+      <p id="instructions"></p>
+      <button id="go"></button>
+      <div id="view-scores"><button id="view"></button></div>
     </main>
     <div id="results"></div>
     <div id="endpage">
-      <input id="initial" />
+      <input id="nameBox" />
       <button id="submit-button">Submit</button>
-      <ol id="scores"></ol>
+      <button id="restart-button">Restart Quiz</button>
+      <button id="clear-scores">Clear Scores</button>
+      <ul id="scores"></ul>
     </div>
     <script src="./assets/script.js"></script>
   </body>
